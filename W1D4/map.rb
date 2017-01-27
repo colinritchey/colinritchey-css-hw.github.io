@@ -6,6 +6,7 @@ class Map
   end
 
   def assign(key, value)
+    remove(key) if lookup(key)
     @set << [key, value]
   end
 
@@ -24,12 +25,14 @@ class Map
       @set.delete(item) if item.first == key
     end
   end
+
+  def show
+    copy = Map.new
+
+    self.set.each do |item|
+      copy.assign(item.first, item.last)
+    end
+
+    copy
+  end
 end
-
-map_set = Map.new
-map_set.assign(1, "hello")
-map_set.assign(2, "world")
-
-p map_set.set
-map_set.remove(3)
-p map_set.set
