@@ -18,6 +18,12 @@ class Map
 
     val
   end
+
+  def remove(key)
+    @set.each do |item|
+      @set.delete(item) if item.first == key
+    end
+  end
 end
 
 map_set = Map.new
@@ -25,5 +31,5 @@ map_set.assign(1, "hello")
 map_set.assign(2, "world")
 
 p map_set.set
-
-p map_set.lookup(3)
+map_set.remove(3)
+p map_set.set
