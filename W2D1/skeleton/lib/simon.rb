@@ -10,7 +10,6 @@ class Simon
   end
 
   def play
-
     until @game_over
       take_turn
     end
@@ -24,17 +23,23 @@ class Simon
       show_sequence
       require_sequence
 
-      round_success_message
-      @sequence_length += 1
+      unless @game_over
+        round_success_message
+        @sequence_length += 1
+      end
     end
   end
 
   def show_sequence
-    add_random_color
+    p add_random_color
   end
 
   def require_sequence
+    puts "Repeat the sequence"
+    player_input = gets.chomp
 
+    player_seq = player_input.split(", ")
+    @game_over = true unless player_seq == @seq
   end
 
   def add_random_color
@@ -42,11 +47,11 @@ class Simon
   end
 
   def round_success_message
-
+    puts "Good now lets add another"
   end
 
   def game_over_message
-
+    puts "Game Over"
   end
 
   def reset_game
@@ -54,4 +59,9 @@ class Simon
     @sequence_length = 1
     @game_over = false
   end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  simon = Simon.new
+  simon.play
 end
