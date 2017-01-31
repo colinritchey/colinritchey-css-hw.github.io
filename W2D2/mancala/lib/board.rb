@@ -11,7 +11,7 @@ class Board
   def place_stones
     # helper method to #initialize every non-store cup with four stones each
     @cups[0..12].each_index do |i|
-      next if i == 6
+      next if i == 6 || i == 13
       @cups[i] = Array.new(4) { :stone }
     end
 
@@ -22,33 +22,34 @@ class Board
   end
 
   def make_move(start_pos, current_player_name)
-    len = @cups[start_pos].length
-    stones = []
-    len.times{ stones << @cups[start_pos].pop }
+    stones =  @cups[start_pos]
+    @cups[start_pos] = []
+
+    if current_player_name == @name1
+      ignore_pos = 13
+    else
+      ignore_pos = 6
+    end
 
     next_pos = start_pos
 
-    ignore_num = 13
-
     until stones.empty?
-      next_pos = (next_pos + 1) % 13
-      # puts "next_pos is #{next_pos}"
-      next if next_pos == ignore_num
+      next_pos = (next_pos + 1) % 14
+      next if next_pos == ignore_pos
 
       @cups[next_pos] << stones.pop
     end
 
     render
-    next_turn((next_pos + 1) % 13)
+    next_turn(next_pos)
   end
 
   def next_turn(ending_cup_idx)
     # helper method to determine what #make_move returns
-    # puts "ending_cup_idx #{ending_cup_idx}"
-    if @cups[ending_cup_idx].empty?
-      :switch
-    elsif ending_cup_idx == 6
+    if ending_cup_idx == 6 || ending_cup_idx == 13
       :prompt
+    elsif @cups[ending_cup_idx].length == 1
+      :switch
     else
       ending_cup_idx
     end
@@ -72,15 +73,3 @@ class Board
     return @cups[6].length > @cups[13].length ? @name1 : @name2
   end
 end
-
-
-# board = Board.new("name1", "name2")
-# board.make_move(0, "Erica")
-#
-# board.make_move(10, "James")
-# board.cups[6] = [:stone, :stone, :stone, :stone, :stone, :stone]
-# board.cups[13] = [:stone, :stone, :stone, :stone, :stone]
-# p board.winner
-# b.make_move(12, "Erica")
-# p b.cups[13]
-# p b.cups[3]
