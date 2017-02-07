@@ -63,7 +63,7 @@ class Playwright
 
   def get_plays
     raise "#{self} not in database" unless @id
-    plays = PlayDBConnection.instance.execute(<<-SQL, @id)
+    data = PlayDBConnection.instance.execute(<<-SQL, @id)
       SELECT
         *
       FROM
@@ -71,7 +71,7 @@ class Playwright
       WHERE
         playwright_id = ?
     SQL
-    plays.map { |play| Play.new(play) }
+    data.map { |datum| Play.new(datum) }
   end
 
 end
