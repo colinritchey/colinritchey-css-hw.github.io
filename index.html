@@ -1,5 +1,7 @@
 <html>
     <head>
+    <title>Spinach Quiche</title>
+    <meta charset="utf-8" name="description" content="Spinach Quiche recipe">
     <img src="aa_logo_2.png" height="50" >
     <h2>Spinach Quiche</h2>
     <nav>
@@ -9,6 +11,20 @@
         <li><a href="#Directions">Directions</a></li>
       </ul>
     </nav>
+    <script type="text/javascript" src="external_javascript_example.js"/>
+    <link rel="stylesheet" href="css-reset.css" type="text/css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-12345678-9', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+
     </head>
     <body>
 
@@ -55,10 +71,10 @@
           <li>Bake at 375 degrees for 35 minutes. If crust starts to get too brown - cover edges with tin-foil.</li>
           <li>Slice &amp; serve.</li>
         </ol>
-        <section>
-          <form action="/reviews" method="post">
+        <section id="reviews">
+          <form action="/reviews" id="review-form" method="post">
             <label for="reviewer">Reviewer</label>
-            <input id="reviewer" type="text">
+            <input id="name" type="text">
 
             <br>
 
@@ -84,8 +100,9 @@
             <br><br>
 
             <label> Review
-              <textarea></textarea>
+              <textarea id="review"></textarea>
             </label>
+            <input type="submit" value="Submit">
           </form>
         </section>
         <footer>
