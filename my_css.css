@@ -28,8 +28,8 @@ ul li a {
   text-decoration: none;
 }
 
-div.user_review {
-  border-style: groove;
-  border-radius: 5px;
-  padding-left:10px;
-}
+  /*div.user_review {
+    border-style: groove;
+    border-radius: 5px;
+    padding-left:10px;
+  }*/
