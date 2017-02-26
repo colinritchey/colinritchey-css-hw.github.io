@@ -5,6 +5,7 @@
 
       <link rel="stylesheet" href="css_custom_reset.css" type="text/css">
       <link rel="stylesheet" href="my_css.css" type="text/css">
+      <link rel="stylesheet" href="./assets/custom_grid.css" type="text/css">
       <script type="text/javascript" src="external_javascript_example.js"/>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,7 +20,7 @@
 
     </head>
     <body>
-      <header>
+      <header class="clear-fix">
         <img src="aa_logo_2.png" height="50" >
           <nav>
             <ul>
@@ -29,13 +30,7 @@
             </ul>
           </nav>
       </header>
-
-        <h2>Description</h2><a name='Description'></a>
-        <p>Quiche is a savoury, open-faced pastry crust with a filling of savory custard with one or more of cheese, meat, seafood or vegetables. Quiche can be served hot or cold. It is part of French cuisine but is also popular in other countries, particularly as party food.
-
-        </p>
-
-
+      <div class="col col-1-3">
         <aside>
           <h2>Ingredients</h2><a name='Ingredients'></a>
           <ul class="ingredients-list">
@@ -50,12 +45,21 @@
             <li>salt &amp; pepper</li>
           </ul>
         </aside>
+      </div>
+
+      <div class="col col-2-3">
+
 
       <section>
         <h2>Spinach Quiche</h2>
         <figure>
           <img src="spinach_quiche.jpg">
         </figure>
+
+        <h2>Description</h2><a name='Description'></a>
+        <p>Quiche is a savoury, open-faced pastry crust with a filling of savory custard with one or more of cheese, meat, seafood or vegetables. Quiche can be served hot or cold. It is part of French cuisine but is also popular in other countries, particularly as party food.
+
+        </p>
 
         <figurecaption>
           <a href="https://en.wikipedia.org/wiki/Quiche">Wikipedia article</a>
@@ -99,7 +103,7 @@
               <option value="Professional Chef">Professional Chef</option>
             </select>
 
-            <br><br>
+            <br>
 
             <label>
               <textarea id="review"></textarea>
@@ -108,6 +112,7 @@
           </form>
         </section>
         </section>
+        </div>
         <footer>
           <p>Original recipe by username 'veggiemom' on food.com </p>
         </footer>
