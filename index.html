@@ -21,44 +21,45 @@
     <body>
       <header>
         <img src="aa_logo_2.png" height="50" >
+          <nav>
+            <ul>
+              <li><a href="#Description">Description</a></li>
+              <li><a href="#Ingredients">Ingredients</a></li>
+              <li><a href="#Directions">Directions</a></li>
+            </ul>
+          </nav>
       </header>
-      <h2>Spinach Quiche</h2>
-      <nav>
-        <ul>
-          <li><a href="#Description">Description</a></li>
-          <li><a href="#Ingredients">Ingredients</a></li>
-          <li><a href="#Directions">Directions</a></li>
-        </ul>
-      </nav>
+
         <h2>Description</h2><a name='Description'></a>
         <p>Quiche is a savoury, open-faced pastry crust with a filling of savory custard with one or more of cheese, meat, seafood or vegetables. Quiche can be served hot or cold. It is part of French cuisine but is also popular in other countries, particularly as party food.
 
         </p>
-        <section>
-          <figure>
-            <img src="spinach_quiche.jpg">
-          </figure>
 
-          <figurecaption>
-            <a href="https://en.wikipedia.org/wiki/Quiche">Wikipedia article</a>
-          </figurecaption>
 
-          <aside>
-            <h2>Ingredients</h2><a name='Ingredients'></a>
-            <ul class="ingredients-list">
-              <li>1 ready-made pie crust</li>
-              <li>3 tablespoons butter</li>
-              <li>1 small onion, chopped</li>
-              <li>1 cup frozen chopped spinach, thawed &amp; drained</li>
-              <li>1 garlic clove (pressed, using garlic press)</li>
-              <li>6 eggs</li>
-              <li>1 cup milk</li>
-              <li>2 cups shredded colby-monterey jack cheese</li>
-              <li>salt &amp; pepper</li>
-            </ul>
-          </aside>
+        <aside>
+          <h2>Ingredients</h2><a name='Ingredients'></a>
+          <ul class="ingredients-list">
+            <li>1 ready-made pie crust</li>
+            <li>3 tablespoons butter</li>
+            <li>1 small onion, chopped</li>
+            <li>1 cup frozen chopped spinach, thawed &amp; drained</li>
+            <li>1 garlic clove (pressed, using garlic press)</li>
+            <li>6 eggs</li>
+            <li>1 cup milk</li>
+            <li>2 cups shredded colby-monterey jack cheese</li>
+            <li>salt &amp; pepper</li>
+          </ul>
+        </aside>
 
-        </section>
+      <section>
+        <h2>Spinach Quiche</h2>
+        <figure>
+          <img src="spinach_quiche.jpg">
+        </figure>
+
+        <figurecaption>
+          <a href="https://en.wikipedia.org/wiki/Quiche">Wikipedia article</a>
+        </figurecaption>
         <h2>Directions</h2><a name='Directions'></a>
         <ol>
           <li>Pre-heat oven to 375 degrees.</li>
@@ -81,17 +82,15 @@
 
             <br>
 
-            <label for="Rating">Rating</label>
-
-            <input name="Rating" type="radio" value="1" checked> 1
-            <input name="Rating" type="radio" value="2"> 2
-            <input name="Rating" type="radio" value="3"> 3
-            <input name="Rating" type="radio" value="4"> 4
-            <input name="Rating" type="radio" value="5"> 5
-
+            <label for="Rating">
+              <input name="Rating" type="radio" value="1" checked> 1
+              <input name="Rating" type="radio" value="2"> 2
+              <input name="Rating" type="radio" value="3"> 3
+              <input name="Rating" type="radio" value="4"> 4
+              <input name="Rating" type="radio" value="5"> 5
+            </label>
             <br>
 
-            <label for="expertise">Cooking Expertise</label>
             <select id="expertise" >
               <option disabled selected>-- Select Cooking Expertise --</option>
               <option value="Sometimes Cook">Sometimes Cook</option>
@@ -102,11 +101,12 @@
 
             <br><br>
 
-            <label> Review
+            <label>
               <textarea id="review"></textarea>
             </label>
             <input type="submit" value="Submit">
           </form>
+        </section>
         </section>
         <footer>
           <p>Original recipe by username 'veggiemom' on food.com </p>
